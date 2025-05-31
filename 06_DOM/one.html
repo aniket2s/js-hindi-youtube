@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    
+    <div>
+        <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1> 
+        <!-- textContent will show whole content inside h1 here but innerText will not show the span tag part because it has styling property of display: none -->
+        <!-- output of title.innerText is DOM learning on Chai aur code -->
+        <!-- output of title.textContent is DOM learning on Chai aur code test text -->
+        <!-- output od title.innerHTML is DOM learning on Chai aur code <span style="display: none;">test text</span> -->
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+
+        </ul>
+    </div>
+
+    <!-- Interesting part in video lecture at 11:20 of 32nd part -->
+
+    <!-- In the lecture of DOM (31 and 32), we learnt about DOM and drawn the diagram. Also, learnt about querySelector, nodelist, HTMLcollection etc.  -->
+
+</body>
+</html>

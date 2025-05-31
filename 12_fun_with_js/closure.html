@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+
+  <script>
+
+    // function init() {
+    //   let name = "Mozilla"; 
+
+    //   function displayName() {
+    //     console.log(name); 
+    //   }
+    //   displayName();
+    // }
+
+    // init();
+
+    // function outer(){
+    //     let username = "hitesh"
+
+    //     function inner(){
+    //         let secret = "123"
+    //         console.log("inner",username); // inner hitesh
+    //     }
+    //     function inner2(){
+    //         console.log("inner2",username); // inner2 hitesh
+    //         console.log(secret); // secret is not defined
+    //     }
+
+    //     inner()
+    //     inner2()
+    // }
+    // outer()
+
+    // console.log("Too outer", username); // username is not defined
+
+    // Note: Lexical Scoping -> Inner functions have access of outer function scopes (means access of all variables and methods defined in outer function).
+
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+    // Note: Here in above code, function displayName is getting returned alongwith its whole lexical scope(meaning that 'name' will get printed). This is possible because of closures. 
+
+  </script>
+
+  <script>
+        // Best Example of a Closure scenario
+        
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+  </script>
+</html>
